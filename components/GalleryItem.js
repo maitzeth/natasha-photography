@@ -10,7 +10,7 @@ const GalleryItem = ({ src }) => {
   return (
     <LightGallery mode="lg-fade" plugins={[lgZoom]}>
       <a data-src={src} className="cursor-pointer">
-        <img className="img-responsive" src={src} />
+        <img className="img-responsive" src={src} loading="lazy" />
       </a>
     </LightGallery>
   );

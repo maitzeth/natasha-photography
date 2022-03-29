@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const CategoryItem = ({ image, to = "" }) => {
   const imageItem = useRef(null);
@@ -9,9 +10,10 @@ const CategoryItem = ({ image, to = "" }) => {
     <section className="gallery-item" ref={imageItem}>
       <Link href={to}>
         <a>
-          <img
+          <Image
             src={image}
-            alt="Vercel Logo"
+            alt={`photopgraphy ${to}`}
+            layout="fill"
             className="block max-w-full h-auto"
           />
         </a>
