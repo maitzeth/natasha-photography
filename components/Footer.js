@@ -3,7 +3,7 @@ import { BsFillSuitHeartFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between h-[50px] text-xs">
+    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between md:h-[50px] text-xs py-5 md:py-0">
       <p className="text-white">
         © {new Date().getFullYear()} Natasha Villamizar, All Rights Reserved
       </p>

@@ -29,13 +29,6 @@ const NavDesktop = () => {
             </a>
           </Link>
         </li>
-        {/* <li>
-          <Link href="/about">
-            <a className="text-gray-300 hover:text-white px-4 py-2 nav-text">
-              About me
-            </a>
-          </Link>
-        </li> */}
       </ul>
 
       <ul className="flex items-center space-x-2">

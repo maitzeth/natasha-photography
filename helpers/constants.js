@@ -24,14 +24,14 @@ export const socialMedia = [
 export const categoryMenu = [
   {
     label: "Fashion",
-    to: "fashion",
+    to: "/",
   },
   {
     label: "Portraits",
-    to: "portraits",
+    to: "/portraits",
   },
   {
     label: "Products",
-    to: "products",
+    to: "/products",
   },
 ];

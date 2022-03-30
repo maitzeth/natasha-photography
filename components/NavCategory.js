@@ -1,23 +1,28 @@
 import React from "react";
 import { categoryMenu } from "../helpers/constants";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import classNames from "classnames";
 
-const NavCategory = ({ setCategory, selectedCategory }) => {
+const NavCategory = () => {
+  const router = useRouter();
+  console.log({ router: router.route });
   return (
     <ul className="category-menu flex space-x-5 fixed left-2/4">
       {categoryMenu.map((menu, index) => {
+        const anchorClasses = classNames(
+          "hover:text-white px-2 py-2 font-oswald",
+          {
+            "text-white": router.route === menu.to,
+            "text-gray-400": router.route !== menu.to,
+          }
+        );
+
         return (
           <li key={index}>
-            <button
-              type="button"
-              onClick={() => setCategory(menu.to)}
-              className={classNames("nav-text", {
-                "text-white": selectedCategory === menu.to,
-                "text-gray-400": selectedCategory !== menu.to,
-              })}
-            >
-              {menu.label}
-            </button>
+            <Link href={menu.to}>
+              <a className={anchorClasses}>{menu.label}</a>
+            </Link>
           </li>
         );
       })}
