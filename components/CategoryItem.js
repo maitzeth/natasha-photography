@@ -10,10 +10,9 @@ const CategoryItem = ({ image, to = "" }) => {
     <section className="gallery-item" ref={imageItem}>
       <Link href={to}>
         <a>
-          <Image
+          <img
             src={image}
             alt={`photopgraphy ${to}`}
-            layout="fill"
             className="block max-w-full h-auto"
           />
         </a>

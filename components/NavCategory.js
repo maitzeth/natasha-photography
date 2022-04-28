@@ -6,9 +6,8 @@ import classNames from "classnames";
 
 const NavCategory = () => {
   const router = useRouter();
-  console.log({ router: router.route });
   return (
-    <ul className="category-menu flex space-x-5 fixed left-2/4">
+    <ul className="flex items-center justify-center space-x-5 h-[50px]">
       {categoryMenu.map((menu, index) => {
         const anchorClasses = classNames(
           "hover:text-white px-2 py-2 font-oswald",

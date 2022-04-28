@@ -1,6 +1,5 @@
 import "../styles/globals.css";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
+import "lightgallery.js/dist/css/lightgallery.css";
 import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
