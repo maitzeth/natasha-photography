@@ -8,7 +8,7 @@ const GalleryGrid = ({ images }) => {
   const { width } = useWindowSize();
 
   const PhotoItem = ({ image, thumb }) => (
-    <LightgalleryItem src={image} thumb={thumb}>
+    <LightgalleryItem src={image} thumb={thumb} group="0">
       <img
         src={image}
         className="img-responsive my-4 cursor-pointer"
