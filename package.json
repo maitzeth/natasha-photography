@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:analyze": "npm run build && source-map-explorer .next/static/**/*.js"
   },
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@trendyol-js/react-carousel": "^2.0.1",
     "classnames": "^2.3.1",
     "next": "12.1.0",
+    "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
@@ -25,6 +27,7 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.6",
+    "source-map-explorer": "^2.5.2",
     "tailwindcss": "^3.0.23"
   }
 }

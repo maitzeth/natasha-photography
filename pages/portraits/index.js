@@ -3,7 +3,7 @@ import CategoryItem from "../../components/CategoryItem";
 import HomeLayout from "../../components/HomeLayout";
 import useHorizontalScroll from "../../hooks/useHorizontalScroll";
 
-const index = () => {
+const PortraitsPage = () => {
   const { ref } = useHorizontalScroll();
   return (
     <HomeLayout>
@@ -19,4 +19,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default PortraitsPage;
