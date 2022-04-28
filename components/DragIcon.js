@@ -1,10 +1,15 @@
 import React from "react";
 import { AiOutlineSwap } from "react-icons/ai";
+import { useWindowSize } from "@react-hook/window-size";
+import { sizes } from "../utils/devices";
 
 const DragIcon = () => {
+  const [width] = useWindowSize();
   return (
-    <div className="hidden lg:flex space-x-2 items-center fixed bottom-[15vh] left-2/4 -translate-x-2/4">
-      <p className="text-white font-oswald">Drag</p>
+    <div className="flex space-x-2 items-center justify-center h-[50px]">
+      <p className="text-white font-oswald">
+        {width > sizes.md ? "Scroll" : "Drag"}
+      </p>
       <div>
         <AiOutlineSwap className="text-white h-5 w-5" />
       </div>

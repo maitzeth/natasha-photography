@@ -1,52 +1,37 @@
 import React from "react";
-import GalleryItem from "./GalleryItem";
 import Masonry from "react-masonry-css";
 import useWindowSize from "../hooks/useWindowSize";
-import lgZoom from "lightgallery/plugins/zoom";
-import dynamic from "next/dynamic";
-
-const LightGallery = dynamic(() => import("lightgallery/react"), {
-  ssr: false,
-});
+import { sizes } from "../utils/devices";
+import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 
 const GalleryGrid = ({ images }) => {
   const { width } = useWindowSize();
 
-  if (width > 520) {
-    return (
-      <Masonry
-        breakpointCols={3}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {images.map((image, key) => (
-          <LightGallery
-            mode="lg-fade"
-            plugins={[lgZoom]}
-            key={`desktop-gallery-image-${key}`}
-          >
-            <a data-src={image} className="cursor-pointer">
-              <img className="img-responsive" src={image} loading="lazy" />
-            </a>
-          </LightGallery>
-        ))}
-      </Masonry>
-    );
-  }
-
   return (
     <>
-      <LightGallery mode="lg-fade" plugins={[lgZoom]}>
-        {images.map((image, key) => (
-          <a
-            data-src={image}
-            className="cursor-pointer mt-2 block"
-            key={`mobile-gallery-image-${key}`}
-          >
-            <img className="img-responsive" src={image} loading="lazy" />
-          </a>
-        ))}
-      </LightGallery>
+      <LightgalleryProvider
+        lightgallerySettings={{}}
+        galleryClassName="my_custom_classname"
+      >
+        <Masonry
+          breakpointCols={width > sizes.md ? 3 : 2}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {images.map((image, idx) => {
+            return (
+              <LightgalleryItem key={idx} src={image} group="0">
+                <img
+                  src={image}
+                  className="img-responsive my-4 cursor-pointer"
+                  alt={`a photography number ${idx}`}
+                  loading="lazy"
+                />
+              </LightgalleryItem>
+            );
+          })}
+        </Masonry>
+      </LightgalleryProvider>
     </>
   );
 };

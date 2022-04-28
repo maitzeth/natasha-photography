@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { socialMedia } from "../helpers/constants";
 
-const NavDesktop = () => {
+const Navbar = () => {
   return (
-    <div className="container mx-auto flex justify-between px-4 DESKTOP">
+    <nav className="container mx-auto justify-between px-4 flex">
       <ul className="flex items-center h-20 space-x-2">
         <li className="flex mr-5">
           <Link href="/">
@@ -22,7 +22,7 @@ const NavDesktop = () => {
             </a>
           </Link>
         </li>
-        <li>
+        <li className="hidden md:block">
           <Link href="/">
             <a className="text-gray-300 hover:text-white px-4 py-2 nav-text">
               Home
@@ -31,7 +31,7 @@ const NavDesktop = () => {
         </li>
       </ul>
 
-      <ul className="flex items-center space-x-2">
+      <ul className="flex items-center space-x-5 md:space-x-2">
         {socialMedia.map((el, index) => (
           <li key={index}>
             <a href={el.href} target="_blank" rel="noopener noreferrer">
@@ -40,8 +40,8 @@ const NavDesktop = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
-export default NavDesktop;
+export default Navbar;

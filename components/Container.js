@@ -6,9 +6,11 @@ const Container = ({
   refEl,
   verticalCentered = false,
   isFlex = false,
+  className,
 }) => {
   const ContainerClasses = classNames(
-    "overflow-x-hidden gallery-wrapper max-w-7xl mx-auto relative px-4",
+    "overflow-x-hidden gallery-wrapper mx-auto relative",
+    className,
     {
       "items-center": verticalCentered,
       flex: isFlex,
