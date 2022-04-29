@@ -103,10 +103,18 @@ body::-webkit-scrollbar-thumb {
   display: none !important;
 }
 
+.react_lightgallery_item {
+  position: relative;
+}
+
 .horizontal-scroll {
   @apply space-x-2;
   overflow-x: hidden;
   display: flex;
+}
+
+[data-arrow="left"], [data-arrow="right"] {
+  display: none;
 }
 
 @media screen and (min-width: 575px) {

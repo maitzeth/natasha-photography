@@ -3,9 +3,14 @@ import Masonry from "react-masonry-css";
 import useWindowSize from "../hooks/useWindowSize";
 import { sizes } from "../utils/devices";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
+import { useRouter } from "next/router";
+import useGetModelName from "../hooks/useGetModelName";
 
 const GalleryGrid = ({ images }) => {
   const { width } = useWindowSize();
+  const { route } = useRouter();
+
+  const modelName = useGetModelName(route);
 
   return (
     <>

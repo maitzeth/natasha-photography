@@ -1,22 +1,22 @@
 import React from "react";
 import { useRef } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Image from "next/image";
+import useGetModelName from "../hooks/useGetModelName";
 
 const CategoryItem = ({ image, to = "" }) => {
   const imageItem = useRef(null);
-  const router = useRouter();
 
-  const { length, [length - 1]: parsedTo } = to.split("/");
+  const modelName = useGetModelName(to);
 
   return (
-    <section className="gallery-item" ref={imageItem}>
+    <section className="gallery-item relative" ref={imageItem}>
       <Link href={to}>
         <a>
-          <img
+          <Image
             src={image}
-            alt={`a photography of ${parsedTo}`}
-            className="block max-w-full h-auto"
+            alt={`a photography of ${modelName}`}
+            layout="fill"
           />
         </a>
       </Link>
