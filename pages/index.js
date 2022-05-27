@@ -11,6 +11,7 @@ const Home = () => {
       <>
         <CategoryItem image={"/fashion/1/0.jpg"} to="/fashion/sofia" />
         <CategoryItem image={"/fashion/2/0.jpg"} to="/fashion/yuli" />
+        <CategoryItem image={"/fashion/7/Sol-Book.jpg"} to="/fashion/sol" />
         <CategoryItem image={"/fashion/3/0.jpg"} to="/fashion/santiago" />
         <CategoryItem image={"/fashion/4/0.jpg"} to="/fashion/clari" />
         <CategoryItem image={"/fashion/5/0.jpg"} to="/fashion/cloe" />
