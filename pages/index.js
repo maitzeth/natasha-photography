@@ -10,6 +10,7 @@ const Home = () => {
     return (
       <>
         <CategoryItem image={"/fashion/1/0.jpg"} to="/fashion/sofia" />
+        <CategoryItem image={"/fashion/8/0.jpg"} to="/fashion/mafer" />
         <CategoryItem image={"/fashion/2/0.jpg"} to="/fashion/yuli" />
         <CategoryItem image={"/fashion/7/Sol-Book.jpg"} to="/fashion/sol" />
         <CategoryItem image={"/fashion/3/0.jpg"} to="/fashion/santiago" />
