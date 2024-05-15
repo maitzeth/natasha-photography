@@ -1,33 +1,38 @@
 {
-  "name": "natiphoto",
-  "version": "0.1.0",
+  "name": "natasha-photography",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "build:analyze": "npm run build && source-map-explorer .next/static/**/*.js"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@react-hook/window-size": "^3.0.7",
-    "@trendyol-js/react-carousel": "^2.0.1",
-    "classnames": "^2.3.1",
-    "next": "12.1.0",
-    "nprogress": "^0.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1",
-    "react-lightgallery": "^0.9.0",
-    "react-masonry-css": "^1.0.16",
-    "react-use": "^17.3.2"
+    "framer-motion": "^11.2.0",
+    "lenis": "^1.0.45",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "react-use": "^17.5.0",
+    "reset-css": "^5.0.2",
+    "sass": "^1.77.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.1.0",
-    "postcss": "^8.4.6",
-    "source-map-explorer": "^2.5.2",
-    "tailwindcss": "^3.0.23"
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   }
 }

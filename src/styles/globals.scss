@@ -1,0 +1,31 @@
+@import 'reset-css';
+@import './libs/root';
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background-color: $dark;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

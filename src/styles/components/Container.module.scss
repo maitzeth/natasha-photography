@@ -1,0 +1,7 @@
+@import '../libs/root';
+
+.root {
+  max-width: $max-width;
+  @include mx(auto);
+  @include px(4);
+}

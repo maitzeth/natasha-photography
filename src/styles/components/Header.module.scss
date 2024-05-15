@@ -1,0 +1,34 @@
+.main {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: size(4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h2 {
+    text-align: center;
+    font-size: 8vw;
+    line-height: .75;
+    color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    user-select: none;
+    text-transform: uppercase;
+
+    &:first-child {
+      clip-path: inset(0 0% 0 0);
+    }
+  
+    &:last-child {
+      clip-path: inset(0 0 0 0%);
+    }
+  }
+}

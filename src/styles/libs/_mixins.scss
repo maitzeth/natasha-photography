@@ -1,0 +1,91 @@
+$breakpoints: (
+  sm: (
+    min: 576px,
+    max: 575.98px,
+  ),
+  md: (
+    min: 768px,
+    max: 767.98px
+  ),
+  lg: (
+    min: 992px,
+    max: 991.98px
+  ),
+  xl: (
+    min: 1200px,
+    max: 1199.98px
+  ),
+  xxl: (
+    min: 1400px,
+    max: 1399.98px,
+  ),
+);
+
+// Mixins
+@mixin px($num) {
+  padding-left: size($num);
+  padding-right: size($num);
+}
+
+@mixin py($num) {
+  padding-top: size($num);
+  padding-bottom: size($num);
+}
+
+@mixin p($num) {
+  padding-left: size($num);
+  padding-right: size($num);
+  padding-top: size($num);
+  padding-bottom: size($num);
+}
+
+@mixin mt($value) {
+  margin-top: size($value);
+}
+
+@mixin mb($value) {
+  margin-bottom: size($value);
+}
+
+@mixin mx($value) {
+  margin-left: size($value);
+  margin-right: size($value);
+}
+
+@mixin breakpoint($breakpoint, $direction: min) {
+  @if map-has-key($breakpoints, $breakpoint) { 
+    $breakpoint-values: map-get($breakpoints, $breakpoint);
+    $breakpoint-min: map-get($breakpoint-values, min);
+    $breakpoint-max: map-get($breakpoint-values, max);
+
+    @if $direction == min {
+      @media (min-width: $breakpoint-min) {
+        @content;
+      }
+    }
+
+    @else {
+      @media (max-width: $breakpoint-max) {
+        @content;
+      }
+    }
+  } @else {
+    @if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
+
+    @else {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin familyPrimary($weight) {
+  font-family: 'Slussen-Mono Black-TRIAL';
+  font-weight: $weight;
+  font-style: normal;
+}

@@ -1,0 +1,39 @@
+@import '../libs/root' ;
+
+.carousel {
+  // relative h-[300vh] bg-neutral-900
+  position: relative;
+  height: 300vh;
+  background-color: $dark;
+
+  .inner {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .cards {
+    // "flex gap-4"
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card {
+  height: 50%;
+  margin-left: 17.5rem;
+
+  .card__inner {
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      max-width: 800px;
+      // height: auto;
+      height: 100%;
+    }
+  }
+}

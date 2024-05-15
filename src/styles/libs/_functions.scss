@@ -1,0 +1,15 @@
+@import './variables';
+
+@function pxToRem($pxSize) {
+  @return calc($pxSize / $base-font-size) + rem;
+}
+
+@function size($num) {
+  @if $num == auto {
+    @return auto;
+  } @else {
+    @return $rem-size-increment * $num;
+  }
+}
+
+
