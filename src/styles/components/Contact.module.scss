@@ -1,0 +1,24 @@
+@import '../libs/root';
+
+.main {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .caption {
+    h3 {
+      color: whitesmoke;
+      font-size: 4vw;
+      @include familyPrimary(700);
+      text-align: center;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

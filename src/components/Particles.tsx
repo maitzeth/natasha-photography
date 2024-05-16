@@ -6,6 +6,7 @@ interface ParticlesProps {
   staticity?: number;
   ease?: number;
   refresh?: boolean;
+  height: string;
 }
 
 type Circle = {
@@ -26,6 +27,7 @@ export function Particles({
   staticity = 50,
   ease = 50,
   refresh = false,
+  height,
 }: ParticlesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +66,7 @@ export function Particles({
       canvasRef.current.width = canvasSize.current.w * dpr;
       canvasRef.current.height = canvasSize.current.h * dpr;
       canvasRef.current.style.width = `100%`;
-      canvasRef.current.style.height = `100vh`;
+      canvasRef.current.style.height = height ?? `100vh`;
       context.current.scale(dpr, dpr);
     }
   };
@@ -96,11 +98,12 @@ export function Particles({
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
-      const { x, y, translateX, translateY, size, alpha } = circle;
+      const { x, y, translateX, translateY, size } = circle;
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
-      context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      // context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      context.current.fillStyle = '#f8a5c2';
       context.current.fill();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Header } from './components/Header';
 import { HorizontalGallery } from './components/HorizontalGallery';
 import { ParallaxGallery } from './components/ParallaxGallery';
+import { Contact } from './components/Contact';
 
 const Home = () => {
   useSmoothScroll();
@@ -21,7 +22,7 @@ const Home = () => {
       <Header containerScrollYProgress={scrollYProgress}/>
       <ParallaxGallery containerScrollYProgress={scrollYProgress}/>
       <HorizontalGallery />
-      <div className={styles.spacer}></div>
+      <Contact />
     </main>
   );
 };

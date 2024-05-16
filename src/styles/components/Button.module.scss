@@ -1,0 +1,38 @@
+@import '../libs/root';
+
+.roundedButton {
+  border: 1px solid $accent;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 60px 15px 60px;
+  margin-top: size(10);
+  z-index: 2;
+  color: $accent;
+  @include familyPrimary(400);
+  background-color: transparent;
+
+  p {
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s linear;
+  }
+
+  &:hover {
+    p {
+      color:white;
+    }
+  }
+}
+
+.circle{
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  border-radius: 50%;
+  top: 100%;
+  background-color: $accent;
+  z-index: 1;
+}
