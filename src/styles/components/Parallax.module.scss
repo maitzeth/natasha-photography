@@ -14,7 +14,8 @@
   position: relative;
   display: flex;
   gap: 2vw;
-  padding: 2vw;
+  @include px(6);
+  // padding: 2vw;
   box-sizing: border-box;
   overflow: hidden;
 

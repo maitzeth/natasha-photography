@@ -6,8 +6,6 @@ import { Header } from './components/Header';
 import { HorizontalGallery } from './components/HorizontalGallery';
 import { ParallaxGallery } from './components/ParallaxGallery';
 
-
-
 const Home = () => {
   useSmoothScroll();
 

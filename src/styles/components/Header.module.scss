@@ -1,3 +1,5 @@
+@import '../libs/root';
+
 .main {
   position: sticky;
   top: 0;
@@ -12,6 +14,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 
   h2 {
     text-align: center;
@@ -30,5 +33,16 @@
     &:last-child {
       clip-path: inset(0 0 0 0%);
     }
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2vw;
+    line-height: .75;
+    color: white;
+    text-transform: uppercase;
+    @include mt(8);
+
+    @include familyPrimary(700);
   }
 }
