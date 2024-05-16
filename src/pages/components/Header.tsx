@@ -4,6 +4,7 @@ import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motio
 import { useRef } from "react";
 import { CTAScroll } from './CTAScroll';
 import { HeaderImage } from './HeaderImage';
+import { Particles } from '@/components/Particles';
 
 export const Header = ({ containerScrollYProgress }: ScrollYProps) => {
   const scale = useTransform(containerScrollYProgress, [0, 1], [1, 0.9]);
@@ -27,6 +28,7 @@ export const Header = ({ containerScrollYProgress }: ScrollYProps) => {
 
   return (
     <motion.header ref={header} style={{ scale, opacity }} className={styles.main}>
+      <Particles />
       <HeaderImage />
       <div className={styles.caption}>
         <motion.h2 style={{ clipPath: topClip, y: titleY }}>Natasha</motion.h2>
