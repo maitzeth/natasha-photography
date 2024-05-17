@@ -1,0 +1,19 @@
+@import '../../styles/libs/root';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: #{$footer-height}px;
+  align-items: center;
+  @include px(10);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    @include fontMedium();
+    color: white;
+
+    a {
+      color: $accent;
+    }
+  }
+}

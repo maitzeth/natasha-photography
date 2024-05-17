@@ -6,7 +6,7 @@
   left: 5vw;
 
   .inner {
-    @include familyPrimary(700);
+    @include fontBlack;
     padding-left: 1.1vw;
     font-size: 1.6vw;
     font-stretch: condensed;

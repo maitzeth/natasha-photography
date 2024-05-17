@@ -1,38 +1,31 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, useEffect, PropsWithChildren } from "react";
+import { useRef, PropsWithChildren } from "react";
 import styles from '@/styles/components/HorizontalGallery.module.scss';
 
-import { useInView, useAnimation } from "framer-motion"
+// clip-path: inset(0 0 0 0)
+const fadeInAnimationVariants = {
+  initial: {
+    y: 100,
+    clipPath: 'inset(0 0  100% 0)',
+  },
+  animate: {
+    y: 0,
+    clipPath: 'inset(0 0 0 0)',
+    transition: {
+      delay: 0.25
+    }
+  },
+};
 
 export const ShowInView = ({ children }: PropsWithChildren) => {
-  const container = useRef(null);
-  const controls = useAnimation();
-  const inView = useInView(container);
-
-  const squareVariants = {
-    visible: {
-      clipPath: `inset(0 0 0 0)`,
-      transition: {
-        delay: 0.3
-      }
-    },
-    hidden: {
-      clipPath: `inset(0 0 100% 0)`,
-    }
-  }
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
   return (
     <motion.article
-      ref={container}
-      animate={controls}
-      initial="hidden"
-      variants={squareVariants}
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
       className={styles.inView}
     >
       {children}

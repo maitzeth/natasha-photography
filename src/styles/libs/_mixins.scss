@@ -84,8 +84,20 @@ $breakpoints: (
   }
 }
 
-@mixin familyPrimary($weight) {
+@mixin fontBlack() {
   font-family: 'Slussen-Mono Black-TRIAL';
-  font-weight: $weight;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@mixin fontMedium() {
+  font-family: 'Slussen-Mono Medium-TRIAL';
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin fontAccent() {
+  font-family: 'MADE Cannes';
+  font-weight: normal;
   font-style: normal;
 }

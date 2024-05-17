@@ -26,6 +26,8 @@
     user-select: none;
     text-transform: uppercase;
 
+    @include fontAccent();
+
     &:first-child {
       clip-path: inset(0 0% 0 0);
     }
@@ -43,6 +45,6 @@
     text-transform: uppercase;
     @include mt(8);
 
-    @include familyPrimary(700);
+    @include fontMedium();
   }
 }

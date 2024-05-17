@@ -2,7 +2,7 @@
 
 .main {
   position: relative;
-  height: 500px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
     h3 {
       color: whitesmoke;
       font-size: 4vw;
-      @include familyPrimary(700);
+      @include fontBlack;
       text-align: center;
       text-transform: uppercase;
 

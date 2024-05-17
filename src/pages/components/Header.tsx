@@ -28,7 +28,7 @@ export const Header = ({ containerScrollYProgress }: ScrollYProps) => {
 
   return (
     <motion.header ref={header} style={{ scale, opacity }} className={styles.main}>
-      <Particles />
+      <Particles height="100vh" />
       <HeaderImage />
       <div className={styles.caption}>
         <motion.h2 style={{ clipPath: topClip, y: titleY }}>Natasha</motion.h2>
