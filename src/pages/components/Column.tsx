@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '@/styles/components/Parallax.module.scss';
 import { motion } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
