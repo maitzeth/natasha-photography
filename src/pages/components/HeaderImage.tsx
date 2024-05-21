@@ -4,7 +4,7 @@ export const HeaderImage = () => {
   return (
     <div className={styles.main}>
       <div className={styles.overlay} />
-      <img src="/header.jpg" alt="header image" className={styles.image} />
+      <img src="/jeder.jpg" alt="header image" className={styles.image} />
     </div>
   )
 }

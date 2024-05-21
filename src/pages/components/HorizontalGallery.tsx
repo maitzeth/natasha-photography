@@ -5,12 +5,12 @@ import styles from '@/styles/components/HorizontalGallery.module.scss';
 // clip-path: inset(0 0 0 0)
 const fadeInAnimationVariants = {
   initial: {
-    y: 100,
-    clipPath: 'inset(0 0  100% 0)',
+    y: 200,
+    scale: 0.8,
   },
   animate: {
     y: 0,
-    clipPath: 'inset(0 0 0 0)',
+    scale: 1,
     transition: {
       delay: 0.25
     }
@@ -52,7 +52,7 @@ export const HorizontalGallery = () => {
                 <ShowInView key={`gallery-item-${index}`}>
                   <div className={styles.card}>
                     <div className={styles.card__inner}>
-                      <img src={card} alt="" />
+                      <img src={card} alt={`visual element ${index}`} loading="lazy" />
                     </div>
                   </div>
                 </ShowInView>
@@ -66,17 +66,16 @@ export const HorizontalGallery = () => {
 };
 
 const cards = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg",
-  "header.webp",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg",
-  "7.jpg",
-  "8.jpg",
-  "9.jpg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg"
+  "/b/1.jpg",
+  "/b/2.jpg",
+  "/b/3.jpg",
+  "/b/4.jpg",
+  "/b/5.jpg",
+  "/b/6.jpg",
+  "/b/7.jpg",
+  "/b/8.jpg",
+  "/b/9.jpg",
+  "/b/10.jpg",
+  "/b/11.jpg",
+  "/b/12.jpg"
 ];
