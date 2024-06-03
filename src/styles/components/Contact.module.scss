@@ -11,13 +11,22 @@
   .caption {
     h3 {
       color: whitesmoke;
-      font-size: 4vw;
+      
       @include fontBlack;
       text-align: center;
       text-transform: uppercase;
 
       &:last-child {
         margin-top: 1rem;
+      }
+
+      @include breakpoint(xs) {
+        font-size: 8vw;
+        line-height: 0.75;
+      }
+  
+      @include breakpoint(sm) {
+        font-size: 4vw;
       }
     }
   }

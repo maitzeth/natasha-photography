@@ -2,13 +2,30 @@
 
 .main {
   display: flex;
-  justify-content: space-between;
+  
   height: #{$footer-height}px;
   align-items: center;
-  @include px(10);
+  @include px(4);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
+  @include breakpoint(md) {
+    @include px(10);
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  
   p {
+    font-size: 0.75rem;
+
+    @include breakpoint(sm) {
+      font-size: 1rem;
+    }
+
     @include fontMedium();
     color: white;
 

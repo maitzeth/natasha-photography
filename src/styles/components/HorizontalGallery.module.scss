@@ -2,8 +2,12 @@
 
 .carousel {
   position: relative;
-  height: 300vh;
+  height: 200vh;
   background-color: $dark;
+
+  @include breakpoint(md) {
+    height: 400vh;
+  }
 
   .inner {
     position: sticky;
@@ -17,11 +21,16 @@
   .cards {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 }
 
 .card {
-  height: 50%;
+  height: 80vw;
+
+  @include breakpoint(md) {
+    height: 40vw;
+  }
 
   .card__inner {
     height: 100%;
@@ -30,6 +39,7 @@
     img {
       height: 100%;
       max-width: 400px;
+      object-fit: cover;
       
       @include breakpoint(xxl) {
         max-width: 650px;
@@ -40,7 +50,11 @@
 
 .card__wrapper {
   overflow: hidden;
-  width: 40vw;
+  width: 65vw;
+
+  @include breakpoint(xxl) {
+    width: 40vw;
+  }  
 }
 
 .inView {

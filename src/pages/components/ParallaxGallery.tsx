@@ -1,9 +1,31 @@
 import styles from '@/styles/components/Parallax.module.scss';
 import { useTransform, motion, useScroll } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
-import { useWindowSize } from 'react-use';
+import { useMedia, useWindowSize } from 'react-use';
 import { Column } from './Column';
 import { useRef } from 'react';
+
+const useResponsive = () => {
+  const {width, height} = useWindowSize();
+
+  const isXS = useMedia('(max-width: 639px)');
+  const isSM = useMedia('(min-width: 640px)');
+  const isMD = useMedia('(min-width: 768px)');
+  const isLG = useMedia('(min-width: 1024px)');
+  const isXL = useMedia('(min-width: 1280px)');
+  const is2XL = useMedia('(min-width: 1536px)');
+
+  return {
+    width,
+    height,
+    xs: isXS,
+    sm: isSM,
+    md: isMD,
+    lg: isLG,
+    xl: isXL,
+    '2xl': is2XL,
+  }
+}
 
 type Props = {
   containerScrollYProgress: MotionValue<number>;
@@ -28,7 +50,8 @@ export const ParallaxGallery = ({ containerScrollYProgress }: Props) => {
   const scale = useTransform(containerScrollYProgress, [0, 0.5], [0.9, 1]);
 
   const container = useRef(null);
-  const { height } = useWindowSize();
+
+  const { lg, md, xs, height } = useResponsive();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -42,12 +65,34 @@ export const ParallaxGallery = ({ containerScrollYProgress }: Props) => {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 0.5]);
 
+  const getFirstColumn = () => {
+    if (xs) {
+      return [images[0], images[1], images[2]];
+    }
+
+    return [images[4], images[1], images[2]];
+  }
+
+  const getSecondColumn = () => {
+    if (xs) {
+      return [images[8], images[6], images[3] , images[5]];
+    }
+
+    return [images[3], images[0], images[5]];
+  }
+  
+
   return (
     <motion.section style={{scale}} ref={container} className={styles.gallery}>
-      <Column images={[images[0], images[1], images[2]]} y={y1} />
-      <Column images={[images[3], images[4], images[5]]} y={y2} />
-      <Column images={[images[8], images[7], images[6]]} y={y3} />
-      <Column images={[images[9], images[10], images[11]]} y={y4} />
+      <Column images={getFirstColumn()} y={y1} />
+      <Column images={getSecondColumn()} y={y2} />
+      {md && (
+        <Column images={[images[7], images[6], images[8]]} y={y3} />
+      )}
+
+      {lg && (
+        <Column images={[images[9], images[11], images[10]]} y={y4} />
+      )}
     </motion.section>
   )
 }

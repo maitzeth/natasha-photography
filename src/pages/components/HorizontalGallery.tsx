@@ -1,26 +1,22 @@
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, PropsWithChildren } from "react";
 import styles from '@/styles/components/HorizontalGallery.module.scss';
-
-// clip-path: inset(0 0 0 0)
-const fadeInAnimationVariants = {
-  initial: {
-    y: 200,
-    scale: 0.8,
-  },
-  animate: {
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: 0.25
-    }
-  },
-};
+import { motion, useScroll, useTransform } from "framer-motion";
+import { PropsWithChildren, useRef } from "react";
 
 export const ShowInView = ({ children }: PropsWithChildren) => {
   return (
     <motion.article
-      variants={fadeInAnimationVariants}
+      variants={{
+        initial: {
+          scale: 0,
+        },
+        animate: {
+          scale: 1,
+          transition: {
+            velocity: 4,
+            delay: 0.25
+          }
+        },
+      }}
       initial="initial"
       whileInView="animate"
       viewport={{
@@ -36,11 +32,12 @@ export const ShowInView = ({ children }: PropsWithChildren) => {
 
 export const HorizontalGallery = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-52%"]);
 
   return (
     <section ref={targetRef} className={styles.carousel}>
@@ -48,7 +45,10 @@ export const HorizontalGallery = () => {
         <motion.div style={{ x }} className={styles.cards}>
           {cards.map((card, index) => {
             return (
-              <div key={`gallery-${index}`} className={styles.card__wrapper}>
+              <div
+                key={`gallery-${index}`}
+                className={styles.card__wrapper}
+              >
                 <ShowInView key={`gallery-item-${index}`}>
                   <div className={styles.card}>
                     <div className={styles.card__inner}>
@@ -71,11 +71,11 @@ const cards = [
   "/b/3.jpg",
   "/b/4.jpg",
   "/b/5.jpg",
-  "/b/6.jpg",
-  "/b/7.jpg",
-  "/b/8.jpg",
-  "/b/9.jpg",
-  "/b/10.jpg",
-  "/b/11.jpg",
-  "/b/12.jpg"
+  // "/b/6.jpg",
+  // "/b/7.jpg",
+  // "/b/8.jpg",
+  // "/b/9.jpg",
+  // "/b/10.jpg",
+  // "/b/11.jpg",
+  // "/b/12.jpg"
 ];

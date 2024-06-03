@@ -8,7 +8,6 @@ export const Contact = () => {
       <div className={styles.canvas}>
         <FloatingSparkles />
       </div>
-      {/* <Particles height={`800px`} /> */}
       <div className={styles.caption}>
         <h3>Vamos a crear</h3>
         <h3>Trabajemos juntos</h3>

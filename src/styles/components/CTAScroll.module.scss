@@ -8,13 +8,21 @@
   .inner {
     @include fontBlack;
     padding-left: 1.1vw;
-    font-size: 1.6vw;
+    
     font-stretch: condensed;
     text-transform: uppercase;
     line-height: 100%;
     letter-spacing:  -.01em;
     text-align: left;
     color: white;
+
+    @include breakpoint(xs) {
+      font-size: 5vw;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 1.6vw;
+    }
   }
 
   .scroller {

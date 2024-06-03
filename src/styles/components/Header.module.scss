@@ -27,7 +27,7 @@
 
   h2 {
     text-align: center;
-    font-size: 8vw;
+    
     line-height: .75;
     color: whitesmoke;
     mix-blend-mode: difference;
@@ -36,6 +36,14 @@
     text-transform: uppercase;
 
     @include fontAccent();
+
+    @include breakpoint(xs) {
+      font-size: 16vw;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 8vw;
+    }
 
     &:first-child {
       clip-path: inset(0 0% 0 0);
@@ -48,12 +56,21 @@
 
   h3 {
     text-align: center;
-    font-size: 2vw;
-    line-height: .75;
+    
     color: whitesmoke;
     text-transform: uppercase;
     @include mt(8);
 
     @include fontMedium();
+
+    @include breakpoint(xs) {
+      font-size: 5vw;
+      line-height: 1.25;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 2vw;
+      line-height: .75;
+    }
   }
 }

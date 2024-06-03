@@ -9,13 +9,22 @@
   justify-content: center;
   @include fontMedium();
   margin-top: size(10);
-  padding: 1.75rem 4rem;
-  font-size: 5.25rem;
+  
   text-transform: uppercase;
   border-radius: 80px;
   z-index: 2;
   color: $accent;
   text-decoration: none;
+
+  @include breakpoint(xs) {
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 5.25rem;
+    padding: 1.75rem 4rem;
+  }
   
   background-color: transparent;
 
