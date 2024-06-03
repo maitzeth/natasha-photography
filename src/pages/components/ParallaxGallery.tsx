@@ -11,18 +11,18 @@ type Props = {
 }
 
 const images = [
-  "/a/1.jpg",
-  "/a/2.jpg",
-  "/a/3.jpg",
-  "/a/4.jpg",
-  "/a/5.jpg",
-  "/a/6.jpg",
-  "/a/7.jpg",
-  "/a/8.jpg",
-  "/a/9.jpg",
-  "/a/10.jpg",
-  "/a/11.jpg",
-  "/a/12.jpg",
+  "/a/1.webp",
+  "/a/2.webp",
+  "/a/3.webp",
+  "/a/4.webp",
+  "/a/5.webp",
+  "/a/6.webp",
+  "/a/7.webp",
+  "/a/8.webp",
+  "/a/9.webp",
+  "/a/10.webp",
+  "/a/11.webp",
+  "/a/12.webp",
 ];
 
 export const ParallaxGallery = ({ containerScrollYProgress }: Props) => {

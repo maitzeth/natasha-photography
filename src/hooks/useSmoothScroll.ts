@@ -15,7 +15,7 @@ export const useSmoothScroll = () => {
       requestAnimationFrame(raf);
     }
 
-    if (!lg) {
+    if (lg) {
       requestAnimationFrame(raf);
     }
   }, [lg]);

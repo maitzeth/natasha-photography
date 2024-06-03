@@ -19,7 +19,7 @@ export const Column = ({ images, y, className }: Props) => {
         images.map((src: string, i: number) => {
           return (
             <div key={i} className={styles.imageContainer}>
-              <img src={src} alt="" />        
+              <img src={src} alt={`gallery image ${i}`} loading="lazy" />        
             </div>
           )
         })

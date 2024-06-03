@@ -66,16 +66,9 @@ export const HorizontalGallery = () => {
 };
 
 const cards = [
-  "/b/1.jpg",
-  "/b/2.jpg",
-  "/b/3.jpg",
-  "/b/4.jpg",
-  "/b/5.jpg",
-  // "/b/6.jpg",
-  // "/b/7.jpg",
-  // "/b/8.jpg",
-  // "/b/9.jpg",
-  // "/b/10.jpg",
-  // "/b/11.jpg",
-  // "/b/12.jpg"
+  "/b/1.webp",
+  "/b/2.webp",
+  "/b/3.webp",
+  "/b/4.webp",
+  "/b/5.webp",
 ];
