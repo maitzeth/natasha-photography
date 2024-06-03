@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { useResponsive } from '@/hooks/useResponsive';
 
 export const useSmoothScroll = () => {
+  const { lg } = useResponsive();
+
   useEffect( () => {
     const lenis = new Lenis({
       lerp: 0,
@@ -12,6 +15,8 @@ export const useSmoothScroll = () => {
       requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
-  }, []);
+    if (!lg) {
+      requestAnimationFrame(raf);
+    }
+  }, [lg]);
 }
